@@ -25,5 +25,32 @@
   <%= @report.datetime %>
 </p>
 
+<h3>Comments</h3>
+
+<% if @report.comments.any? %>
+  <ul>
+  <% @report.comments.each do |comment| %>
+    <li>
+      <%= comment.name %>: 
+      <%= comment.memo %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for([@report, @report.comments.build]) do |f| %>
+  <p>name: 
+    <%=
+      f.text_field :name
+    %>
+  </p>
+  <p>text: 
+    <%=
+      f.text_field :memo
+    %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
