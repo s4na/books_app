@@ -10,6 +10,7 @@ class ReportsController < ApplicationController
   # GET /reports/1
   # GET /reports/1.json
   def show
+    @report = Report.find(params[:id])
   end
 
   # GET /reports/new
