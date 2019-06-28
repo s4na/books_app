@@ -20,6 +20,18 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<h3>Comments</h3>
+<% if @book.comments.any? %>
+  <ul>
+  <% @book.comments.each do |comment| %>
+    <li>
+      <%= comment.name %>: 
+      <%= comment.memo %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_for([@book, @book.comments.build]) do |f| %>
   <p>name: 
     <%=
