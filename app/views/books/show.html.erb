@@ -20,5 +20,19 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<%= form_for([@book, @book.comments.build]) do |f| %>
+  <p>name: 
+    <%=
+      f.text_field :name
+    %>
+  </p>
+  <p>text: 
+    <%=
+      f.text_field :memo
+    %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
