@@ -1,14 +1,18 @@
 class CommentsController < ApplicationController
   def create
-    @book = Book.find(params[:book_id])
+    unless params[:book_id].nil?
+      p "params[:book_id] = nil"
+      @book = Book.find(params[:book_id])
+      @book.comments.create(comment_params)
+      redirect_to book_path(@book)
+    end
 
-    p "comment_params" # debug
-    pp comment_params # debug
-    p "@book.comments" # debug
-    pp @book.comments # debug
-
-    @book.comments.create(comment_params)
-    redirect_to book_path(@book)
+    unless params[:report_id].nil?
+      p "params[:report_id] = nil"
+      @report = Report.find(params[:report_id])
+      @report.comments.create(comment_params)
+      redirect_to report_path(@report)
+    end
   end
 
   private
