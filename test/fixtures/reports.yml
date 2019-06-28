@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  emotion: MyString
+  body: MyText
+  author: MyString
+  datetime: 2019-06-28 17:22:40
+
+two:
+  title: MyString
+  emotion: MyString
+  body: MyText
+  author: MyString
+  datetime: 2019-06-28 17:22:40
