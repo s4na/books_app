@@ -1,4 +1,6 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 class ReportsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +18,7 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create report" do
-    assert_difference('Report.count') do
+    assert_difference("Report.count") do
       post reports_url, params: { report: { author: @report.author, body: @report.body, datetime: @report.datetime, emotion: @report.emotion, title: @report.title } }
     end
 
@@ -39,7 +41,7 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy report" do
-    assert_difference('Report.count', -1) do
+    assert_difference("Report.count", -1) do
       delete report_url(@report)
     end
 
