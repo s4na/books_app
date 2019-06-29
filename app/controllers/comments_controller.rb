@@ -1,26 +1,33 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+
+  before_action :set_commentable
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
+  def show
+  end
+
   def create
-    unless params[:book_id].nil?
-      book = Book.find(params[:book_id])
-      commentable.create(comment_params)
-      comment = book.comments.new(comment_params)
-      comment.save!
+    @comment = @commentable.comments.new(comment_params)
 
-      redirect_to book_path(book)
-    end
-
-    unless params[:report_id].nil?
-      report = Report.find(params[:report_id])
-      comment = report.comments.new(comment_params)
-      comment.save!
-
-      redirect_to report_path(report)
+    if @comment.save
+      redirect_to [@commentable, @comment]
+    else
+      render :new
     end
   end
 
   private
+    def set_commentable
+      resource, id = request.path.split("/")[1, 2]
+      @commentable = resource.singularize.classify.constantize.find(id)
+    end
+
+    def set_comment
+      @comment = Comment.find(params[:id])
+    end
+
     def comment_params
       params.require(:comment).permit(:name, :memo)
     end
