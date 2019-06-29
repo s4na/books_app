@@ -24,12 +24,11 @@ ActiveRecord::Schema.define(version: 2019_06_28_082240) do
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.text "memo"
-    t.integer "book_id"
-    t.integer "report_id"
+    t.string "commentable_type"
+    t.integer "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_comments_on_book_id"
-    t.index ["report_id"], name: "index_comments_on_report_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "reports", force: :cascade do |t|
