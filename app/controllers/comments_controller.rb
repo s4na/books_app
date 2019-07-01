@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
   end
 
   # GET /comments/1
@@ -17,7 +16,6 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
   end
 
   # GET /comments/1/edit
@@ -27,7 +25,19 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    # @comment = Comment.new(comment_params)
+    # @comment = @commentable.comments.new(comment_params)
     @comment = @commentable.comments.build(comment_params)
+
+    # respond_to do |format|
+    #   if @comment.save
+    #     format.html { redirect_to @comment, notice: "Comment was successfully created." }
+    #     format.json { render :show, status: :created, location: @comment }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @comment.errors, status: :unprocessable_entity }
+    #   end
+    # end
 
     @comment.save
 
@@ -54,8 +64,8 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
+      format.html { redirect_to @commentable }
     end
   end
 

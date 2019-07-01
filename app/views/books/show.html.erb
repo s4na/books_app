@@ -27,6 +27,10 @@
     <li>
       <%= comment.name %>: 
       <%= comment.memo %>
+      <%=
+        link_to "Destroy", [@book, comment], method: :delete, data: { confirm: 'Are you sure?' }
+        # methodが違う
+      %>
     </li>
   <% end %>
   </ul>
@@ -34,14 +38,10 @@
 
 <%= form_for([@book, @book.comments.build]) do |f| %>
   <p>name: 
-    <%=
-      f.text_field :name
-    %>
+    <%= f.text_field :name %>
   </p>
-  <p>text: 
-    <%=
-      f.text_field :memo
-    %>
+  <p>comment: 
+    <%= f.text_field :memo %>
   </p>
   <p><%= f.submit %></p>
 <% end %>
