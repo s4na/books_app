@@ -25,29 +25,27 @@
   <%= @report.datetime %>
 </p>
 
+<% commentable = @report %>
 <h3>Comments</h3>
-
-<% if @report.comments.any? %>
+<% if commentable.comments.any? %>
   <ul>
-  <% @report.comments.each do |comment| %>
+  <% commentable.comments.each do |comment| %>
     <li>
       <%= comment.name %>: 
       <%= comment.memo %>
+      <%= link_to 'Edit', edit_report_comment_path(commentable, comment) %>
+      <%= link_to "Destroy", [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
   </ul>
 <% end %>
 
-<%= form_for([@report, @report.comments.build]) do |f| %>
+<%= form_for([commentable, commentable.comments.build]) do |f| %>
   <p>name: 
-    <%=
-      f.text_field :name
-    %>
+    <%= f.text_field :name %>
   </p>
-  <p>text: 
-    <%=
-      f.text_field :memo
-    %>
+  <p>comment: 
+    <%= f.text_field :memo %>
   </p>
   <p><%= f.submit %></p>
 <% end %>
