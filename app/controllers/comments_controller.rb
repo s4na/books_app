@@ -27,23 +27,12 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    # @comment = Comment.new(comment_params)
-    @comment = @commentable.comments.new(comment_params)
+    @comment = @commentable.comments.build(comment_params)
 
-    # respond_to do |format|
-    #   if @comment.save
-    #     format.html { redirect_to @comment, notice: "Comment was successfully created." }
-    #     format.json { render :show, status: :created, location: @comment }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
-    if @comment.save
-      redirect_to [@commentable, @comment]
-    else
-      render :new
-    end
+    @comment.save
+
+    # redirect_to [@commentable, @comment] # comments/:id/showに飛びたい場合
+    redirect_to @commentable
   end
 
   # PATCH/PUT /comments/1
