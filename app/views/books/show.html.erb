@@ -27,10 +27,8 @@
     <li>
       <%= comment.name %>: 
       <%= comment.memo %>
-      <%=
-        link_to "Destroy", [@book, comment], method: :delete, data: { confirm: 'Are you sure?' }
-        # methodが違う
-      %>
+      <%= link_to 'Edit', edit_book_comment_path(@book, comment) %>
+      <%= link_to "Destroy", [@book, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
   </ul>
