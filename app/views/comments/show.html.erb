@@ -15,17 +15,4 @@
   <%= @comment.memo %>
 </p>
 
-<%=
-  # old
-  # link_to 'Edit', edit_comment_path(@comment)
-
-  # 動かなかったやつ
-  # 編集モードにいきたい
-  # link_to "Edit", [@commentable, @comment]
-%>
-<%=
-  # " |" 
-%>
-<%=
-  link_to "Back", @commentable
-%>
+<%= link_to "Back", @commentable %>
