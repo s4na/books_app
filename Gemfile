@@ -66,5 +66,10 @@ end
 gem "tzinfo-data"
 gem "carrierwave"
 
+<<<<<<< HEAD
 gem "slim-rails"
 gem "html2slim"
+=======
+gem 'slim-rails'
+gem 'html2slim'
+>>>>>>> slim bundle install
