@@ -1,0 +1,15 @@
+p#notice
+  = notice
+p
+  strong
+    | Commentable:
+  = @comment.commentable
+p
+  strong
+    | Name:
+  = @comment.name
+p
+  strong
+    | Comment:
+  = @comment.memo
+= link_to "Back", @commentable
