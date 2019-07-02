@@ -2,15 +2,24 @@ p#notice
   = notice
 p
   strong
-    | Title:
+    / | Title:
+    / = Book.[:title]
+    / = activerecord.attributes.models.book.attributes.title
+    = Book.human_attribute_name("title")
+    | : 
   = @book.title
 p
   strong
-    | Memo:
+    / | Memo:
+    / = @book[:memo]
+    = Book.human_attribute_name("memo")
+    | : 
   = @book.memo
 p
   strong
-    | Author:
+    / | Author:
+    = Book.human_attribute_name("author")
+    | : 
   = @book.author
 p
   strong
