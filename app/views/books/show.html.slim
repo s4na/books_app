@@ -1,0 +1,42 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @book.title
+p
+  strong
+    | Memo:
+  = @book.memo
+p
+  strong
+    | Author:
+  = @book.author
+p
+  strong
+    | Picture:
+  = image_tag(@book.picture_url) if @book.picture.present?
+- commentable = @book
+h3
+  | Comments
+- if commentable.comments.any?
+  ul
+    - commentable.comments.each do |comment|
+      li
+        = comment.name
+        | : 
+        = comment.memo
+        = link_to 'Edit', edit_book_comment_path(commentable, comment)
+        = link_to "Destroy", [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
+= form_for([commentable, commentable.comments.build]) do |f|
+  p
+    | name: 
+    = f.text_field :name
+  p
+    | comment: 
+    = f.text_field :memo
+  p
+    = f.submit
+= link_to 'Edit', edit_book_path(@book)
+|  | 
+= link_to 'Back', books_path

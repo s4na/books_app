@@ -1,0 +1,27 @@
+= form_with(model: report, local: true) do |form|
+  - if report.errors.any?
+    #error_explanation
+      h2
+        = pluralize(report.errors.count, "error")
+        |  prohibited this report from being saved:
+      ul
+        - report.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :emotion
+    = form.text_field :emotion
+  .field
+    = form.label :body
+    = form.text_area :body
+  .field
+    = form.label :author
+    = form.text_field :author
+  .field
+    = form.label :datetime
+    = form.datetime_select :datetime
+  .actions
+    = form.submit

@@ -1,0 +1,46 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @report.title
+p
+  strong
+    | Emotion:
+  = @report.emotion
+p
+  strong
+    | Body:
+  = @report.body
+p
+  strong
+    | Author:
+  = @report.author
+p
+  strong
+    | Datetime:
+  = @report.datetime
+- commentable = @report
+h3
+  | Comments
+- if commentable.comments.any?
+  ul
+    - commentable.comments.each do |comment|
+      li
+        = comment.name
+        | : 
+        = comment.memo
+        = link_to 'Edit', edit_report_comment_path(commentable, comment)
+        = link_to "Destroy", [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
+= form_for([commentable, commentable.comments.build]) do |f|
+  p
+    | name: 
+    = f.text_field :name
+  p
+    | comment: 
+    = f.text_field :memo
+  p
+    = f.submit
+= link_to 'Edit', edit_report_path(@report)
+|  | 
+= link_to 'Back', reports_path
