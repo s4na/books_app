@@ -1,18 +1,23 @@
 p#notice
   = notice
 h1
-  | Books
+  / | Books
+  = "#{Book.model_name.human}: "
 table
   thead
     tr
       th
-        | Title
+        / | Title
+        = "#{Book.human_attribute_name("title")}: "
       th
-        | Memo
+        / | Memo
+        = "#{Book.human_attribute_name("memo")}: "
       th
-        | Author
+        / | Author
+        = "#{Book.human_attribute_name("author")}: "
       th
-        | Picture
+        / | Picture
+        = "#{Book.human_attribute_name("picture")}: "
       th[colspan="3"]
   tbody
     - @books.each do |book|
