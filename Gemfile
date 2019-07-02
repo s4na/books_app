@@ -73,3 +73,6 @@ gem "carrierwave"
 #   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
 #   gem 'pry-stack_explorer' # スタックをたどれる
 # end
+
+gem 'slim-rails'
+gem 'html2slim'
