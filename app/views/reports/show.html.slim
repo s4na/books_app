@@ -33,7 +33,7 @@ h3
         = " "
         = link_to I18n.t(:Edit), edit_report_comment_path(commentable, comment)
         = " "
-        = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
 = form_for([commentable, commentable.comments.build]) do |f|
   p
     = "#{Comment.human_attribute_name("name")}: "
