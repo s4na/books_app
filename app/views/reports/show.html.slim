@@ -19,7 +19,7 @@ p
 p
   strong
     = "#{Report.human_attribute_name("datetime")}: "
-  = @report.datetime
+  = I18n.l(@report.datetime, format: :long)
 - commentable = @report
 h3
   = "#{Comment.model_name.human}: "
