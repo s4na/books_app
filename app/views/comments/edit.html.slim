@@ -1,4 +1,4 @@
 h1
-  | Editing Comment
-= render 'form', comment: @comment
-= link_to "Back", @commentable
+  = I18n.t(:Editing_Model, model: @comment.model_name.human)
+= render "form", comment: @comment
+= link_to I18n.t(:Back), @commentable
