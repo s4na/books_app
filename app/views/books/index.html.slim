@@ -30,6 +30,6 @@ table
         td
           = link_to I18n.t(:Edit), edit_book_path(book)
         td
-          = link_to I18n.t(:Destroy), book, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to I18n.t(:Destroy), book, method: :delete, data: { confirm: I18n.t(:Are_you_sure?) }
 br
 = link_to I18n.t(:Create_Model, model: Book.model_name.human), new_book_path
