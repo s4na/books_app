@@ -23,21 +23,22 @@ h3
   ul
     - commentable.comments.each do |comment|
       li
-        = "#{comment.name}: "
+        = comment.name
+        = ": "
         = comment.memo
-        = link_to 'Edit', edit_book_comment_path(commentable, comment)
-        = link_to "Destroy", [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
+        = " "
+        = link_to I18n.t(:Edit), edit_book_comment_path(commentable, comment)
+        = " "
+        = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: "Are you sure?" }
 = form_for([commentable, commentable.comments.build]) do |f|
   p
-    / | name: 
     = "#{Comment.human_attribute_name("name")}: "
     = f.text_field :name
   p
-    / | comment: 
     = "#{Comment.human_attribute_name("memo")}: "
     = f.text_field :memo
   p
     = f.submit
-= link_to 'Edit', edit_book_path(@book)
+= link_to I18n.t(:Edit), edit_book_path(@book)
 |  | 
-= link_to 'Back', books_path
+= link_to I18n.t(:Back), books_path

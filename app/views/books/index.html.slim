@@ -1,23 +1,18 @@
 p#notice
   = notice
 h1
-  / | Books
-  = "#{Book.model_name.human}: "
+  = "#{Book.model_name.human}"
 table
   thead
     tr
       th
-        / | Title
-        = "#{Book.human_attribute_name("title")}: "
+        = "#{Book.human_attribute_name("title")}"
       th
-        / | Memo
-        = "#{Book.human_attribute_name("memo")}: "
+        = "#{Book.human_attribute_name("memo")}"
       th
-        / | Author
-        = "#{Book.human_attribute_name("author")}: "
+        = "#{Book.human_attribute_name("author")}"
       th
-        / | Picture
-        = "#{Book.human_attribute_name("picture")}: "
+        = "#{Book.human_attribute_name("picture")}"
       th[colspan="3"]
   tbody
     - @books.each do |book|
@@ -31,10 +26,10 @@ table
         td
           = book.picture
         td
-          = link_to 'Show', book
+          = link_to I18n.t(:Show), book
         td
-          = link_to 'Edit', edit_book_path(book)
+          = link_to I18n.t(:Edit), edit_book_path(book)
         td
-          = link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to I18n.t(:Destroy), book, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Book', new_book_path
+= link_to I18n.t(:Create_Model, model: Book.model_name.human), new_book_path
