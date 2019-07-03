@@ -32,4 +32,5 @@ table
         td
           = link_to I18n.t(:Destroy), book, method: :delete, data: { confirm: 'Are you sure?' }
 br
+= paginate @books
 = link_to I18n.t(:Create_Model, model: Book.model_name.human), new_book_path
