@@ -34,6 +34,6 @@ table
         td
           = link_to I18n.t(:Edit), edit_report_path(report)
         td
-          = link_to I18n.t(:Destroy), report, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to I18n.t(:Destroy), report, method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
 br
 = link_to I18n.t(:New_Model, model: @reports.model_name.human), new_report_path
