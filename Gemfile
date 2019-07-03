@@ -66,5 +66,5 @@ end
 gem "tzinfo-data"
 gem "carrierwave"
 
-gem 'slim-rails'
-gem 'html2slim'
+gem "slim-rails"
+gem "html2slim"
