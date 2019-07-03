@@ -2,7 +2,7 @@ p#notice
   = notice
 p
   strong
-    = "#{@comment.model_name.human}"
+    = @comment.model_name.human
 p
   strong
     = "#{Comment.human_attribute_name("name")}: "
