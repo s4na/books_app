@@ -36,4 +36,6 @@ table
         td
           = link_to t(:Destroy), report, method: :delete, data: { confirm: t(:Are_you_sure) }
 br
+
+= paginate @reports
 = link_to t(:New_Model, model: @reports.model_name.human), new_report_path
