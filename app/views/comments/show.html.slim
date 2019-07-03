@@ -2,14 +2,13 @@ p#notice
   = notice
 p
   strong
-    | Commentable:
-  = @comment.commentable
+    = "#{@comment.model_name.human}"
 p
   strong
-    | Name:
+    = "#{Comment.human_attribute_name("name")}: "
   = @comment.name
 p
   strong
-    | Comment:
+    = "#{Comment.human_attribute_name("memo")}: "
   = @comment.memo
-= link_to "Back", @commentable
+= link_to I18n.t(:Back), @commentable

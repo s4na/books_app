@@ -22,10 +22,10 @@ table
         td
           = comment.memo
         td
-          = link_to 'Show', comment
+          = link_to I18n.t(:Show), comment
         td
-          = link_to 'Edit', edit_comment_path(comment)
+          = link_to I18n.t(:Edit), edit_comment_path(comment)
         td
-          = link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to I18n.t(:Destroy), comment, method: :delete, data: { confirm: 'Are you sure?' }
 br
 = link_to 'New Comment', new_comment_path
