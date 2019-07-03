@@ -2,45 +2,47 @@ p#notice
   = notice
 p
   strong
-    | Title:
+    = "#{Report.human_attribute_name("title")}: "
   = @report.title
 p
   strong
-    | Emotion:
+    = "#{Report.human_attribute_name("emotion")}: "
   = @report.emotion
 p
   strong
-    | Body:
+    = "#{Report.human_attribute_name("body")}: "
   = @report.body
 p
   strong
-    | Author:
+    = "#{Report.human_attribute_name("author")}: "
   = @report.author
 p
   strong
-    | Datetime:
+    = "#{Report.human_attribute_name("datetime")}: "
   = @report.datetime
 - commentable = @report
 h3
-  | Comments
+  = "#{Comment.model_name.human}: "
 - if commentable.comments.any?
   ul
     - commentable.comments.each do |comment|
       li
         = comment.name
-        | : 
+        = ": "
         = comment.memo
-        = link_to 'Edit', edit_report_comment_path(commentable, comment)
-        = link_to "Destroy", [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
+        = " "
+        = link_to I18n.t(:Edit), edit_report_comment_path(commentable, comment)
+        = " "
+        = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
 = form_for([commentable, commentable.comments.build]) do |f|
   p
-    | name: 
+    = "#{Comment.human_attribute_name("name")}: "
     = f.text_field :name
   p
-    | comment: 
+    = "#{Comment.human_attribute_name("memo")}: "
     = f.text_field :memo
   p
     = f.submit
-= link_to 'Edit', edit_report_path(@report)
+= link_to I18n.t(:Edit), edit_report_path(@report)
 |  | 
-= link_to 'Back', reports_path
+= link_to I18n.t(:Back), reports_path
