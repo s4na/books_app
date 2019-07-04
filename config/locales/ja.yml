@@ -1,4 +1,8 @@
 ja:
+  Model_was_successfully_created: "%{model}の作成に成功しました"
+  Model_was_successfully_updated: "%{model}の更新に成功しました"
+  Model_was_successfully_destroyed: "%{model}の削除に成功しました"
+  Are_you_sure: 実行しますか？
   New_Model: "新しい%{model}"
   Create_Model: "%{model}を追加する"
   Editing_Model: "%{model}を編集中"
@@ -6,6 +10,7 @@ ja:
   Edit: 編集
   Destroy: 削除
   Back: 戻る
+  error: エラー
   activerecord:
     models:
       book: 本棚

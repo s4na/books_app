@@ -1,4 +1,4 @@
 h1
-  = I18n.t(:New_Model, model: Comment.model_name.human)
+  = I18n.t(:New_Model, model: Book.model_name.human)
 = render "form", book: @book
 = link_to I18n.t(:Back), books_path
