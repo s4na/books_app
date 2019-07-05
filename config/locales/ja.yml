@@ -6,6 +6,7 @@ ja:
   New_Model: "新しい%{model}"
   Create_Model: "%{model}を追加する"
   Editing_Model: "%{model}を編集中"
+  prohibited_this_book_from_being_saved: "この%{model}の保存ができませんでした"
   Show: 閲覧
   Edit: 編集
   Destroy: 削除
