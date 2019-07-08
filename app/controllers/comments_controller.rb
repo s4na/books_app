@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to [@commentable, @comment]}
+        format.html { redirect_to [@commentable, @comment] }
         format.json { render :show, status: :ok, location: [@commentable, @comment] }
       else
         format.html { render :edit }
