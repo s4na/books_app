@@ -19,7 +19,7 @@ p
 p
   strong
     = "#{Report.human_attribute_name("datetime")}: "
-  = I18n.l(@report.datetime, format: :long)
+  = l(@report.datetime, format: :long)
 - commentable = @report
 h3
   = "#{Comment.model_name.human}: "
@@ -31,9 +31,9 @@ h3
         = ": "
         = comment.memo
         = " "
-        = link_to I18n.t(:Edit), edit_report_comment_path(commentable, comment)
+        = link_to t(:Edit), edit_report_comment_path(commentable, comment)
         = " "
-        = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
+        = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: t(:Are_you_sure) }
 = form_for([commentable, commentable.comments.build]) do |f|
   p
     = "#{Comment.human_attribute_name("name")}: "
@@ -43,6 +43,6 @@ h3
     = f.text_field :memo
   p
     = f.submit
-= link_to I18n.t(:Edit), edit_report_path(@report)
+= link_to t(:Edit), edit_report_path(@report)
 |  | 
-= link_to I18n.t(:Back), reports_path
+= link_to t(:Back), reports_path

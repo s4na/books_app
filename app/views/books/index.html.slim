@@ -26,10 +26,10 @@ table
         td
           = book.picture
         td
-          = link_to I18n.t(:Show), book
+          = link_to t(:Show), book
         td
-          = link_to I18n.t(:Edit), edit_book_path(book)
+          = link_to t(:Edit), edit_book_path(book)
         td
-          = link_to I18n.t(:Destroy), book, method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
+          = link_to t(:Destroy), book, method: :delete, data: { confirm: t(:Are_you_sure) }
 br
-= link_to I18n.t(:Create_Model, model: Book.model_name.human), new_book_path
+= link_to t(:Create_Model, model: Book.model_name.human), new_book_path

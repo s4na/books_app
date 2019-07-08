@@ -1,4 +1,4 @@
 h1
-  = I18n.t(:New_Model, model: @report.model_name.human)
+  = t(:New_Model, model: @report.model_name.human)
 = render 'form', report: @report
-= link_to I18n.t(:Back), reports_path
+= link_to t(:Back), reports_path
