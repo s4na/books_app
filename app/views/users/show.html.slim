@@ -1,0 +1,22 @@
+p#notice
+  = notice
+h1
+  | Profile
+p
+  | email
+p
+  = @user.email
+p
+  | 郵便番号
+p
+  = @user.postal_code
+p
+  | 住所
+p
+  = @user.street_address
+p
+  | 自己紹介文
+p
+  = @user.self_introduction
+p
+  = link_to "back to index", "/users"
