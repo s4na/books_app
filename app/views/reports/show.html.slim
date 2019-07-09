@@ -21,31 +21,7 @@ p
     = "#{Report.human_attribute_name("datetime")}: "
   = l(@report.datetime, format: :long)
 - commentable = @report
-h3
-  = "#{Comment.model_name.human}: "
-- @comments = commentable.comments.page(params[:page])
-- if commentable.comments.any?
-  ul
-    - @comments.each do |comment|
-      li
-        = comment.name
-        = ": "
-        = comment.memo
-        = " "
-        = link_to t(:Edit), edit_report_comment_path(commentable, comment)
-        = " "
-        = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: t(:Are_you_sure) }
-br
-= paginate @comments
-= form_for([commentable, commentable.comments.build]) do |f|
-  p
-    = "#{Comment.human_attribute_name("name")}: "
-    = f.text_field :name
-  p
-    = "#{Comment.human_attribute_name("memo")}: "
-    = f.text_field :memo
-  p
-    = f.submit
+= render template: "comments/index", locals: { commentable: @report }
 = link_to t(:Edit), edit_report_path(@report)
 |  | 
 = link_to t(:Back), reports_path
