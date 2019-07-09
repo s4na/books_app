@@ -9,8 +9,8 @@ h3
         = ": "
         = comment.memo
         = " "
-        - p commentable
-        - p comment
+        / - p commentable # debug
+        / - p comment # debug
         = link_to I18n.t(:Edit), [:edit, commentable, comment]
         = " "
         = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: "Are you sure?" }
