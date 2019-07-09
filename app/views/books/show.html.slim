@@ -19,5 +19,6 @@ p
 - commentable = @book
 = render template: "comments/index", locals: { commentable: @book }
 = link_to t(:Edit), edit_book_path(@book)
+= render template: "comments/index", locals: { commentable: @book }
 |  | 
 = link_to t(:Back), books_path
