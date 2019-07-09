@@ -21,6 +21,7 @@ ja:
       book:
         title: タイトル
         memo: メモ
+        author: 名前
         picture: 本の写真
       report:
         title: タイトル
