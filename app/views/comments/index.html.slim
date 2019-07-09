@@ -9,7 +9,7 @@ h3
         = ": "
         = comment.memo
         = " "
-        = link_to t(:Edit), edit_book_comment_path(commentable, comment)
+        = link_to t(:Edit), [commentable, comment], method: :edit
         = " "
         = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: t(:Are_you_sure) }
 br
