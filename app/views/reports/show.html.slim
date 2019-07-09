@@ -47,5 +47,6 @@ br
   p
     = f.submit
 = link_to t(:Edit), edit_report_path(@report)
+= render template: "comments/index", locals: { commentable: @report }
 |  | 
 = link_to t(:Back), reports_path
