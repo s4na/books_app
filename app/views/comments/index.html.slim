@@ -1,17 +1,19 @@
 h3
-  = Comment.model_name.human
-  = ": "
+  = "#{Comment.model_name.human}: "
+- @comments = commentable.comments.page(params[:page])
 - if commentable.comments.any?
   ul
-    - commentable.comments.each do |comment|
+    - @comments.each do |comment|
       li
         = comment.name
         = ": "
         = comment.memo
         = " "
-        = link_to t(:Edit), [commentable, comment], method: :edit
+        = link_to t(:Edit), edit_book_comment_path(commentable, comment)
         = " "
-        = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
+        = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: t(:Are_you_sure) }
+br
+= paginate @comments
 = form_for([commentable, commentable.comments.build]) do |f|
   p
     = "#{Comment.human_attribute_name("name")}: "
