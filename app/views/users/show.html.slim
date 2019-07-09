@@ -1,22 +1,31 @@
 p#notice
   = notice
+
 h1
   | Profile
+strong
+  | name
 p
+  = @user.name
+strong
   | email
 p
   = @user.email
-p
+strong
   | 郵便番号
 p
   = @user.postal_code
-p
+strong
   | 住所
 p
   = @user.street_address
-p
+strong
   | 自己紹介文
 p
   = @user.self_introduction
+
+p
+  = link_to 'Edit', edit_user_registration_path, class: 'navbar-link'
+
 p
   = link_to "back to index", "/users"
