@@ -1,9 +1,5 @@
 en:
-  # Currently_waiting_confirmation_for_emal: "Currently waiting confirmation for %{email}"
   num_characters_minimum: "%{num} characters minimum"
-  # leave_blank_if_you_do_not_want_to_change_it: leave blank if you don't want to change it
-  # Currently_waiting_confirmation_for: Currently waiting confirmation for
-  # we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
   Edit_Model: "Edit %{Model}"
   Cancel: Cancel
   Cancel_my_account: Cancel my account

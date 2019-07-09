@@ -1,9 +1,5 @@
 ja:
-  # Currently_waiting_confirmation_for_emal: "%{email}を現在確認中です"
   num_characters_minimum: "%{num}文字以上を設定してください"
-  # leave_blank_if_you_do_not_want_to_change_it: 変更したくない場合は空白にしてください。
-  # Currently_waiting_confirmation_for: 確認中
-  # we_need_your_current_password_to_confirm_your_changes: 変更を確認するため、現在のパスワードを入力してください
   Edit_Model: "%{Model}を編集する"
   Cancel: キャンセル
   Cancel_my_account: アカウントを削除する
