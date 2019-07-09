@@ -23,9 +23,10 @@ p
 - commentable = @report
 h3
   = "#{Comment.model_name.human}: "
+- @comment = commentable.comments.page(params[:page])
 - if commentable.comments.any?
   ul
-    - commentable.comments.each do |comment|
+    - @comment.each do |comment|
       li
         = comment.name
         = ": "
@@ -34,6 +35,8 @@ h3
         = link_to t(:Edit), edit_report_comment_path(commentable, comment)
         = " "
         = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: t(:Are_you_sure) }
+br
+= paginate @comment
 = form_for([commentable, commentable.comments.build]) do |f|
   p
     = "#{Comment.human_attribute_name("name")}: "
