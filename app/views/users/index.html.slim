@@ -6,6 +6,8 @@ table
   thead
     tr
       th
+        | name
+      th
         = User.human_attribute_name("email")
       th
         | link
@@ -19,6 +21,8 @@ table
   tbody
     - @users.each do |user|
       tr
+        td
+          = user.name
         td
           = user.email
         td
