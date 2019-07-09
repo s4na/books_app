@@ -1,31 +1,23 @@
-p#notice
-  = notice
-h1
-  | Comments
-table
-  thead
-    tr
-      th
-        | Commentable
-      th
-        | Name
-      th
-        | Memo
-      th[colspan="3"]
-  tbody
-    - @comments.each do |comment|
-      tr
-        td
-          = comment.commentable
-        td
-          = comment.name
-        td
-          = comment.memo
-        td
-          = link_to I18n.t(:Show), comment
-        td
-          = link_to I18n.t(:Edit), edit_comment_path(comment)
-        td
-          = link_to I18n.t(:Destroy), comment, method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Comment', new_comment_path
+h3
+  = Comment.model_name.human
+  = ": "
+- if commentable.comments.any?
+  ul
+    - commentable.comments.each do |comment|
+      li
+        = comment.name
+        = ": "
+        = comment.memo
+        = " "
+        = link_to I18n.t(:Edit), "edit_#{commentable.class}_comment_path(commentable, comment)"
+        = " "
+        = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: "Are you sure?" }
+= form_for([commentable, commentable.comments.build]) do |f|
+  p
+    = "#{Comment.human_attribute_name("name")}: "
+    = f.text_field :name
+  p
+    = "#{Comment.human_attribute_name("memo")}: "
+    = f.text_field :memo
+  p
+    = f.submit
