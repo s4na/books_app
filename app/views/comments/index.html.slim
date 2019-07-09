@@ -9,7 +9,9 @@ h3
         = ": "
         = comment.memo
         = " "
-        = link_to I18n.t(:Edit), "edit_#{commentable.class}_comment_path(commentable, comment)"
+        - p commentable
+        - p comment
+        = link_to I18n.t(:Edit), [:edit, commentable, comment]
         = " "
         = link_to I18n.t(:Destroy), [commentable, comment], method: :delete, data: { confirm: "Are you sure?" }
 = form_for([commentable, commentable.comments.build]) do |f|
