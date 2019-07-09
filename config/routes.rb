@@ -3,6 +3,10 @@
 Rails.application.routes.draw do
   root to: redirect("/books")
 
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
+
   resources :books do
     resources :comments
   end
