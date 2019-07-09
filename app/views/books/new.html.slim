@@ -1,0 +1,4 @@
+h1
+  = t(:New_Model, model: Book.model_name.human)
+= render "form", book: @book
+= link_to t(:Back), books_path

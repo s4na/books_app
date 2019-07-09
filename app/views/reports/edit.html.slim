@@ -1,0 +1,6 @@
+h1
+  = t(:Editing_Model, model: Report.model_name.human)
+= render 'form', report: @report
+= link_to t(:Show), @report
+|  | 
+= link_to t(:Back), reports_path

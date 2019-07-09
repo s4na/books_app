@@ -1,0 +1,4 @@
+h1
+  = t(:Editing_Model, model: @comment.model_name.human)
+= render "form", comment: @comment
+= link_to t(:Back), @commentable
