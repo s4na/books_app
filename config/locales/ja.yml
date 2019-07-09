@@ -53,8 +53,10 @@ ja:
         title: タイトル
         emotion: 気分
         body: 内容
-        datetime: 日時
+        author: 名前
+        detatime: 日時
       comment:
+        name: 名前
         memo: コメント
     errors:
       messages:
