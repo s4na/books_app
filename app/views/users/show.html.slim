@@ -22,6 +22,10 @@ strong
   = User.human_attribute_name("self_introduction")
 p
   = @user.self_introduction
+
+p
+  = link_to 'Edit', edit_user_registration_path, class: 'navbar-link'
+
 p
   = link_to t(:back_to_value, {value: t(:index)}), "/users"
   = " | "
