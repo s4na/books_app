@@ -48,16 +48,13 @@ ja:
       book:
         title: タイトル
         memo: メモ
-        author: 名前
         picture: 本の写真
       report:
         title: タイトル
         emotion: 気分
         body: 内容
-        author: 名前
-        detatime: 日時
+        datetime: 日時
       comment:
-        name: 名前
         memo: コメント
     errors:
       messages:
