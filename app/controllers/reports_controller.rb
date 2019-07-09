@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.page(params[:page]).per(5)
+    @reports = Report.page(params[:page])
   end
 
   # GET /reports/1
