@@ -1,0 +1,43 @@
+p#notice
+  = notice
+h1
+  = "#{User.model_name.human}"
+table
+  thead
+    tr
+      th
+        = User.human_attribute_name("email")
+      th
+        | link
+      / th
+      /   = User.human_attribute_name("memo")
+      / th
+      /   = User.human_attribute_name("author")
+      / th
+      /   = User.human_attribute_name("picture")
+      th[colspan="3"]
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.email
+        td
+          = link_to "link", "users/#{user.id}"
+        / td
+        /   = user.memo
+        / td
+        /   = user.author
+        / td
+        /   = user.picture
+        / td
+        /   = link_to I18n.t(:Show), user
+        / td
+        /   = link_to I18n.t(:Edit), edit_user_path(user)
+        / td
+        /   = link_to I18n.t(:Destroy), user, method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
+br
+
+/ = pp User.all
+
+= paginate @users
+/ = link_to I18n.t(:Create_Model, model: User.model_name.human), new_user_path
