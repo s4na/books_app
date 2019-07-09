@@ -1,0 +1,23 @@
+h3
+  = Comment.model_name.human
+  = ": "
+- if commentable.comments.any?
+  ul
+    - commentable.comments.each do |comment|
+      li
+        = comment.name
+        = ": "
+        = comment.memo
+        = " "
+        = link_to t(:Edit), [commentable, comment], method: :edit
+        = " "
+        = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: I18n.t(:Are_you_sure) }
+= form_for([commentable, commentable.comments.build]) do |f|
+  p
+    = "#{Comment.human_attribute_name("name")}: "
+    = f.text_field :name
+  p
+    = "#{Comment.human_attribute_name("memo")}: "
+    = f.text_field :memo
+  p
+    = f.submit
