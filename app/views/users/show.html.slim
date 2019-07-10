@@ -23,6 +23,6 @@ strong
 p
   = @user.self_introduction
 p
-  = link_to t(:Edit), edit_user_registration_path
-p
   = link_to t(:back_to_value, {value: t(:index)}), "/users"
+  = " | "
+  = link_to t(:Edit), edit_user_registration_path
