@@ -8,7 +8,7 @@ ja:
   back_to_value: "%{value}に戻る"
   Logged_in_as: "%{user}としてログイン中"
   Login: ログイン
-  Log_in: ログイン
+  # Log_in: ログイン
   Sign_up: サインアップ
   Logout: ログアウト
   Show_profile: プロフィールを見る
@@ -44,7 +44,7 @@ ja:
       book:
         title: タイトル
         memo: メモ
-        picture: 本の写真
+        picture: 写真
       report:
         title: タイトル
         emotion: 気分
