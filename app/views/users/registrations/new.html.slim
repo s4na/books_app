@@ -1,13 +1,11 @@
 h2
-  = t "devise.registrations.new.sign_up"
+  = t(:Sign_up)
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
-
   .field
     = f.label :name
     br
-    = f.text_field :name, autofocus: true
-
+    = f.text_field :name, autofocus: true, autocomplete: "name-full"
   .field
     = f.label :name
     br

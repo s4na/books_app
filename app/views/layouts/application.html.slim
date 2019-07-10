@@ -22,7 +22,9 @@ html
       = link_to Report.model_name.human, "/reports"
       = " | "
       - if user_signed_in?
-        = link_to t(:Logged_in_as, {user: current_user.email}), "/users/#{current_user.id}"
+        = t(:Logged_in_as, {user: current_user.email})
+        |  | 
+        = link_to t(:Show_profile), "/users/#{current_user.id}"
         |  | 
         = link_to t(:Logout), destroy_user_session_path, method: :delete, class: 'navbar-link'
       - else
