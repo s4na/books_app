@@ -8,7 +8,6 @@ en:
   back_to_value: "Back to %{value}"
   Logged_in_as: "Logged in as %{user}."
   Login: Login
-  # Log_in: Log in
   Sign_up: Sign up
   Logout: Logout
   Show_profile: Show profile
