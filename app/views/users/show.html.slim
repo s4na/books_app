@@ -1,31 +1,28 @@
 p#notice
   = notice
-
-h1
-  | Profile
+h2
+  = User.model_name.human
 strong
-  | name
+  = User.human_attribute_name("name")
 p
   = @user.name
 strong
-  | email
+  = User.human_attribute_name("email")
 p
   = @user.email
 strong
-  | 郵便番号
+  = User.human_attribute_name("postal_code")
 p
   = @user.postal_code
 strong
-  | 住所
+  = User.human_attribute_name("street_address")
 p
   = @user.street_address
 strong
-  | 自己紹介文
+  = User.human_attribute_name("self_introduction")
 p
   = @user.self_introduction
-
 p
-  = link_to 'Edit', edit_user_registration_path, class: 'navbar-link'
-
+  = link_to t(:Edit), edit_user_registration_path
 p
-  = link_to "back to index", "/users"
+  = link_to t(:back_to_value, {value: t(:index)}), "/users"
