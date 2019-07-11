@@ -1,14 +1,25 @@
-p#notice
-  = notice
-p
-  strong
-    = @comment.model_name.human
-p
-  strong
+h3
+  = "#{Comment.model_name.human}: "
+- @comment = commentable.comments.page(params[:page])
+- if commentable.comments.any?
+  ul
+    - @comment.each do |comment|
+      li
+        = comment.name
+        = ": "
+        = comment.memo
+        = " "
+        = link_to t(:Edit), edit_book_comment_path(commentable, comment)
+        = " "
+        = link_to t(:Destroy), [commentable, comment], method: :delete, data: { confirm: t(:Are_you_sure) }
+br
+= paginate @comment
+= form_for([commentable, commentable.comments.build]) do |f|
+  p
     = "#{Comment.human_attribute_name("name")}: "
-  = @comment.name
-p
-  strong
+    = f.text_field :name
+  p
     = "#{Comment.human_attribute_name("memo")}: "
-  = @comment.memo
-= link_to t(:Back), @commentable
+    = f.text_field :memo
+  p
+    = f.submit
