@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :authenticate_user!
 
   def default_url_options
     { locale: I18n.locale }
