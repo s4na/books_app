@@ -1,4 +1,20 @@
 ja:
+  Currently_waiting_confirmation_for_emal: "%{email}を現在確認中です"
+  num_characters_minimum: "%{num}文字以上を設定してください"
+  leave_blank_if_you_do_not_want_to_change_it: 変更したくない場合は空白にしてください。
+  Currently_waiting_confirmation_for: 確認中
+  we_need_your_current_password_to_confirm_your_changes: 変更を確認するため、現在のパスワードを入力してください
+  Edit_Model: "%{Model}を編集する"
+  Cancel: キャンセル
+  Cancel_my_account: アカウントを削除する
+  Update: 更新
+  index: 一覧
+  back_to_value: "%{value}に戻る"
+  Logged_in_as: "%{user}としてログイン中"
+  Login: ログイン
+  Sign_up: サインアップ
+  Logout: ログアウト
+  Show_profile: プロフィールを見る
   Model_App: "%{model}アプリ"
   Model_was_successfully_created: "%{model}の作成に成功しました"
   Model_was_successfully_updated: "%{model}の更新に成功しました"
@@ -15,10 +31,16 @@ ja:
   error: エラー
   activerecord:
     models:
+      user: プロフィール
       book: 本棚
       report: 日報
       comment: コメント
     attributes:
+      user:
+        email: メールアドレス
+        postal_code: 郵便番号
+        street_address: 住所
+        self_introduction: 自己紹介
       book:
         title: タイトル
         memo: メモ
