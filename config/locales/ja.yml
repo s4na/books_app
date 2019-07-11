@@ -12,6 +12,7 @@ ja:
   back_to_value: "%{value}に戻る"
   Logged_in_as: "%{user}としてログイン中"
   Login: ログイン
+  Log_in: ログイン
   Sign_up: サインアップ
   Logout: ログアウト
   Show_profile: プロフィールを見る
