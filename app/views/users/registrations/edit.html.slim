@@ -1,47 +1,42 @@
 h2
-  | Edit 
-  = resource_name.to_s.humanize
+  = t(:Edit_Model, {Model: User.model_name.human})
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
-
   .field
     = f.label :name
     br
-    = f.text_field :name, autofocus: true
-
+    = f.text_field :name, autofocus: true, autocomplete: "name-full"
   .field
     = f.label :email
     br
     = f.email_field :email, autocomplete: "email"
-
   .field
-    = f.label :postal_code
+    = f.label :postal_code, autocomplete: "postal-code"
     br
     = f.text_field :postal_code
   .field
-    = f.label :street_address
+    = f.label :street_address, autocomplete: "street-address"
     br
     = f.text_field :street_address
   .field
     = f.label :self_introduction
     br
     = f.text_field :self_introduction
-
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
-      | Currently waiting confirmation for: 
-      = resource.unconfirmed_email
+      = t(:Currently_waiting_confirmation_for_emal, {email: resource.unconfirmed_email})
   .field
     = f.label :password
     i
-      | (leave blank if you don't want to change it)
+      | (
+      = t(:leave_blank_if_you_do_not_want_to_change_it)
+      | )
     br
     = f.password_field :password, autocomplete: "new-password"
     - if @minimum_password_length
       br
       em
-        = @minimum_password_length
-        |  characters minimum
+        = t(:num_characters_minimum, {num: @minimum_password_length})
   .field
     = f.label :password_confirmation
     br
@@ -49,14 +44,12 @@ h2
   .field
     = f.label :current_password
     i
-      | (we need your current password to confirm your changes)
+      | (
+      = t(:we_need_your_current_password_to_confirm_your_changes)
+      | )
     br
     = f.password_field :current_password, autocomplete: "current-password"
   .actions
-    = f.submit "Update"
-h3
-  | Cancel my account
-p
-  | Unhappy? 
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+    = f.submit t(:Update)
+= button_to t(:Cancel_my_account), registration_path(resource_name), data: { confirm: t(:Are_you_sure) }, method: :delete
+= link_to t(:Back), :back
