@@ -1,9 +1,9 @@
 ja:
-  Currently_waiting_confirmation_for_emal: "%{email}を現在確認中です"
+  # Currently_waiting_confirmation_for_emal: "%{email}を現在確認中です"
   num_characters_minimum: "%{num}文字以上を設定してください"
-  leave_blank_if_you_do_not_want_to_change_it: 変更したくない場合は空白にしてください。
-  Currently_waiting_confirmation_for: 確認中
-  we_need_your_current_password_to_confirm_your_changes: 変更を確認するため、現在のパスワードを入力してください
+  # leave_blank_if_you_do_not_want_to_change_it: 変更したくない場合は空白にしてください。
+  # Currently_waiting_confirmation_for: 確認中
+  # we_need_your_current_password_to_confirm_your_changes: 変更を確認するため、現在のパスワードを入力してください
   Edit_Model: "%{Model}を編集する"
   Cancel: キャンセル
   Cancel_my_account: アカウントを削除する
@@ -12,7 +12,7 @@ ja:
   back_to_value: "%{value}に戻る"
   Logged_in_as: "%{user}としてログイン中"
   Login: ログイン
-  Log_in: ログイン
+  # Log_in: ログイン
   Sign_up: サインアップ
   Logout: ログアウト
   Show_profile: プロフィールを見る
@@ -32,8 +32,11 @@ ja:
   error: エラー
   activerecord:
     models:
-      user: プロフィール
-      book: 本棚
+      user:
+        one: プロフィール
+      book: 
+        one: 書籍
+        other: 本棚
       report: 日報
       comment: コメント
     attributes:
@@ -45,7 +48,7 @@ ja:
       book:
         title: タイトル
         memo: メモ
-        picture: 本の写真
+        picture: 写真
       report:
         title: タイトル
         emotion: 気分
