@@ -1,0 +1,28 @@
+p#notice
+  = notice
+h2
+  = User.model_name.human
+strong
+  = User.human_attribute_name("name")
+p
+  = @user.name
+strong
+  = User.human_attribute_name("email")
+p
+  = @user.email
+strong
+  = User.human_attribute_name("postal_code")
+p
+  = @user.postal_code
+strong
+  = User.human_attribute_name("street_address")
+p
+  = @user.street_address
+strong
+  = User.human_attribute_name("self_introduction")
+p
+  = @user.self_introduction
+p
+  = link_to t(:back_to_value, {value: t(:index)}), "/users"
+  = " | "
+  = link_to t(:Edit), edit_user_registration_path
