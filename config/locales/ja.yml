@@ -1,4 +1,18 @@
 ja:
+  num_characters_minimum: "%{num}文字以上を設定してください"
+  Edit_Model: "%{Model}を編集する"
+  Cancel: キャンセル
+  Cancel_my_account: アカウントを削除する
+  Update: 更新
+  index: 一覧
+  back_to_value: "%{value}に戻る"
+  Logged_in_as: "%{user}としてログイン中"
+  Login: ログイン
+  # Log_in: ログイン
+  Sign_up: サインアップ
+  Logout: ログアウト
+  Show_profile: プロフィールを見る
+  Model_App: "%{model}アプリ"
   Model_was_successfully_created: "%{model}の作成に成功しました"
   Model_was_successfully_updated: "%{model}の更新に成功しました"
   Model_was_successfully_destroyed: "%{model}の削除に成功しました"
@@ -14,14 +28,23 @@ ja:
   error: エラー
   activerecord:
     models:
-      book: 本棚
+      user:
+        one: プロフィール
+      book: 
+        one: 書籍
+        other: 本棚
       report: 日報
       comment: コメント
     attributes:
+      user:
+        email: メールアドレス
+        postal_code: 郵便番号
+        street_address: 住所
+        self_introduction: 自己紹介
       book:
         title: タイトル
         memo: メモ
-        picture: 本の写真
+        picture: 写真
       report:
         title: タイトル
         emotion: 気分
