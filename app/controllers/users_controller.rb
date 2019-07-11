@@ -7,26 +7,13 @@ class UsersController < ApplicationController
   # GET /resource
   # GET /resource.json
   def index
-    # @books = Book.page(params[:page]).per(5)
-    @users = User.page(params[:page]).per(5)
+    @users = User.page(params[:page])
   end
 
   # # GET /resource/1
   # GET "users/:id"
   def show
-    p "UsersController#show"
-
-    # p "params[:id]"
-    # pp params[:id]
-
-    # p "User.find_by(id: params[:id]).nil?"
-    # pp User.find_by(id: params[:id])
-
-    # unless User.find_by(id: params[:id]).nil?
     @user = User.find_by(id: params[:id])
-    # end
-    # p "@user"
-    # pp @user
   end
 
   private
