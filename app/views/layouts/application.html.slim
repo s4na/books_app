@@ -17,10 +17,15 @@ html
     /   p class="alert alert-danger"
     /     = alert
     p.navbar-text.pull-right
+      = link_to Book.model_name.human, "/books"
+      = " | "
+      = link_to Report.model_name.human, "/reports"
+      = " | "
       - if user_signed_in?
-        = t(:Logged_in_as, {user: current_user.email})
-        |  | 
-        = link_to t(:Show_profile), "/users/#{current_user.id}"
+        / = t(:Logged_in_as, {user: current_user.email})
+        / |  | 
+        / = link_to t(:Show_profile), "/users/#{current_user.id}"
+        = link_to t(:Logged_in_as, {user: current_user.email}), "/users/#{current_user.id}"
         |  | 
         = link_to t(:Logout), destroy_user_session_path, method: :delete, class: 'navbar-link'
       - else
