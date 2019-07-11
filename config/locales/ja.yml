@@ -1,4 +1,5 @@
 ja:
+  Model_App: "%{model}アプリ"
   Model_was_successfully_created: "%{model}の作成に成功しました"
   Model_was_successfully_updated: "%{model}の更新に成功しました"
   Model_was_successfully_destroyed: "%{model}の削除に成功しました"
