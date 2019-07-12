@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action only: [:show, :edit, :update, :destroy]
-
   # GET /resource
   # GET /resource.json
   def index
