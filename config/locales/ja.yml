@@ -28,11 +28,8 @@ ja:
   error: エラー
   activerecord:
     models:
-      user:
-        one: プロフィール
-      book: 
-        one: 書籍
-        other: 本棚
+      user: プロフィール
+      book: 書籍
       report: 日報
       comment: コメント
     attributes:

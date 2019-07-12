@@ -2,29 +2,18 @@ doctype html
 html
   head
     title
-      / | BooksApp
-      / どうすれば？
-      / = t(:Model_App, {model: t(commentable.model_name.human)})
+      | App
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    / - if notice
-    /   p class="alert alert-success"
-    /     = notice
-    / - if alert
-    /   p class="alert alert-danger"
-    /     = alert
     p.navbar-text.pull-right
-      = link_to Book.model_name.human, "/books"
+      = link_to (t "activerecord.models.book"), "/books"
       = " | "
       = link_to Report.model_name.human, "/reports"
       = " | "
       - if user_signed_in?
-        / = t(:Logged_in_as, {user: current_user.email})
-        / |  | 
-        / = link_to t(:Show_profile), "/users/#{current_user.id}"
         = link_to t(:Logged_in_as, {user: current_user.email}), "/users/#{current_user.id}"
         |  | 
         = link_to t(:Logout), destroy_user_session_path, method: :delete, class: 'navbar-link'
