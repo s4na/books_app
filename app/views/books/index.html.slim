@@ -1,7 +1,7 @@
 p#notice
   = notice
 h1
-  = "#{Book.model_name.human}"
+  = t "activerecord.models.book"
 table
   thead
     tr
@@ -32,6 +32,5 @@ table
         td
           = link_to t(:Destroy), book, method: :delete, data: { confirm: t(:Are_you_sure) }
 br
-
 = paginate @books
 = link_to t(:Create_Model, model: Book.model_name.human), new_book_path

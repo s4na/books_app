@@ -1,0 +1,38 @@
+h2
+  = t "devise.registrations.new.sign_up"
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :name
+    br
+    = f.text_field :name, autofocus: true, autocomplete: "name-full"
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autocomplete: "email"
+  .field
+    = f.label :postal_code, autocomplete: "postal-code"
+    br
+    = f.text_field :postal_code
+  .field
+    = f.label :street_address, autocomplete: "street-address"
+    br
+    = f.text_field :street_address
+  .field
+    = f.label :self_introduction
+    br
+    = f.text_field :self_introduction
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      em
+        = t(:num_characters_minimum, {num: @minimum_password_length})
+    br
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    br
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit t(:Sign_up)
+= render "users/shared/links"

@@ -1,35 +1,18 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  num_characters_minimum: "%{num} characters minimum"
+  Edit_Model: "Edit %{Model}"
+  Cancel: Cancel
+  Cancel_my_account: Cancel my account
+  Update: Update
+  index: Index
+  back_to_value: "Back to %{value}"
+  Logged_in_as: "Logged in as %{user}."
+  Login: Login
+  # Log_in: Log in
+  Sign_up: Sign up
+  Logout: Logout
+  Show_profile: Show profile
+  Model_App: "%{model}sApp"
   Model_was_successfully_created: "%{model} was successfully created"
   Model_was_successfully_updated: "%{model} was successfully updated"
   Model_was_successfully_destroyed: "%{model} was successfully destroyed"
@@ -45,10 +28,16 @@ en:
   error: error
   activerecord:
     models:
-      book: book
-      report: report
-      comment: comment
+      user: Profile
+      book: Books
+      report: Reports
+      comment: Comments
     attributes:
+      user:
+        email: email
+        postal_code: Postal code
+        street_address: Street address
+        self_introduction: Self introduction
       book:
         title: title
         memo: memo
