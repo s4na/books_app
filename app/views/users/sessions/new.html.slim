@@ -16,3 +16,5 @@ h2
   .actions
     = f.submit (t "devise.sessions.new.sign_in")
 = render "users/shared/links"
+
+= link_to "Sign in with GitHub", user_github_omniauth_authorize_path
