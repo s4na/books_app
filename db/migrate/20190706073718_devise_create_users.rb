@@ -38,6 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :postal_code
       t.string :street_address
       t.string :self_introduction
+      t.boolean :is_github_user, null: false, default: false
 
       t.timestamps null: false
     end

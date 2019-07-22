@@ -26,7 +26,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    super
+    @user = User.find(current_user.id)
+
+    if @user.is_github_user
+      if @user.update_without_current_password sign_up_params
+        sign_in @user, bypass: true
+        set_flash_message :notice, :updated
+        redirect_to after_update_path_for(@user)
+      else
+        render "edit"
+      end
+    else
+      super
+    end
   end
 
   # DELETE /resource
