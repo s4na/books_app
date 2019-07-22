@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   paginates_per 5
+  has_one_attached :icon
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -18,7 +19,8 @@ class User < ApplicationRecord
         provider: auth.provider,
         uid:      auth.uid,
         email:    auth.info.email,
-        password: Devise.friendly_token[0, 20]
+        password: Devise.friendly_token[0, 20],
+        is_github_user: true
       )
     end
     user
