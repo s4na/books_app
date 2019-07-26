@@ -28,7 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     @user = User.find(current_user.id)
 
-    if @user.is_github_user
+    if @user.provider == "github"
       if @user.update_without_current_password sign_up_params
         sign_in @user, bypass: true
         set_flash_message :notice, :updated

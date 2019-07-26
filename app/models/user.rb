@@ -19,8 +19,7 @@ class User < ApplicationRecord
         provider: auth.provider,
         uid:      auth.uid,
         email:    auth.info.email,
-        password: Devise.friendly_token[0, 20],
-        is_github_user: true
+        password: Devise.friendly_token[0, 20]
       )
     end
     user

@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_095002) do
     t.string "postal_code"
     t.string "street_address"
     t.string "self_introduction"
-    t.boolean "is_github_user", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "provider", default: "", null: false
