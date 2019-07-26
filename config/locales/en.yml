@@ -38,6 +38,7 @@ en:
         postal_code: Postal code
         street_address: Street address
         self_introduction: Self introduction
+        icon: Icon
       book:
         title: title
         memo: memo

@@ -38,6 +38,7 @@ ja:
         postal_code: 郵便番号
         street_address: 住所
         self_introduction: 自己紹介
+        icon: アイコン
       book:
         title: タイトル
         memo: メモ
