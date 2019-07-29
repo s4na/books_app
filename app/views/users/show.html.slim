@@ -11,6 +11,13 @@ strong
 p
   = @user.email
 strong
+  = User.human_attribute_name("icon")
+p
+  - if @user.icon.attached?
+    = image_tag @user.icon
+  -  else
+    = "no image"
+strong
   = User.human_attribute_name("postal_code")
 p
   = @user.postal_code
