@@ -1,0 +1,17 @@
+table
+  thead
+    tr
+      th
+        = User.human_attribute_name("name")
+      th
+        = User.human_attribute_name("email")
+      th[colspan="3"]
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.name
+        td
+          = link_to user.email, user_path(user.id)
+        td
+          = render "follows/follow_button", user: user

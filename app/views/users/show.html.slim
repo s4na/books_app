@@ -1,11 +1,15 @@
 p#notice
   = notice
 h2
-  = User.model_name.human
+  = t "views.users.show.title"
 strong
   = User.human_attribute_name("name")
 p
   = @user.name
+p
+  = render "follows/follow_button", user: @user
+= render "followings/followings_counter", user: @user
+= render "followers/followers_counter", user: @user
 strong
   = User.human_attribute_name("email")
 p

@@ -1,0 +1,9 @@
+p#notice
+  = notice
+h2
+  = t "views.title", model: Follow.human_attribute_name(:followings)
+= render "users/show_users_table"
+br
+= paginate @users
+p
+  = link_to t(:back_to_value, {value: t(:index)}), users_path
