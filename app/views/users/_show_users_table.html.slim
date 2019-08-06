@@ -12,6 +12,6 @@ table
         td
           = user.name
         td
-          = link_to user.email, "users/#{user.id}"
+          = link_to user.email, user_path(user.id)
         td
           = render "follows/follow_button", user: user
