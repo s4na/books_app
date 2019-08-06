@@ -26,9 +26,18 @@ ja:
   Destroy: 削除
   Back: 戻る
   error: エラー
+  follow: フォロー
+  following: フォロー中
+  number_of: "%{value}数"
+  views:
+    title: "%{model}一覧"
+    users:
+      show:
+        title: プロフィール
   activerecord:
     models:
-      user: プロフィール
+      user: ユーザー
+      follow: フォロー
       book: 書籍
       report: 日報
       comment: コメント
@@ -39,6 +48,9 @@ ja:
         street_address: 住所
         self_introduction: 自己紹介
         icon: アイコン
+      follow:
+        followings: フォロー
+        followers: フォロワー
       book:
         title: タイトル
         memo: メモ

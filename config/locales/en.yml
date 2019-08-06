@@ -26,9 +26,18 @@ en:
   Destroy: Destroy
   Back: Back
   error: error
+  follow: follow
+  following: following
+  number_of: "Number of %{value}"
+  views:
+    users:
+      show:
+        title: Profile
+    title: "%{model} list"
   activerecord:
     models:
       user: Profile
+      follow: Follow
       book: Books
       report: Reports
       comment: Comments
@@ -39,6 +48,9 @@ en:
         street_address: Street address
         self_introduction: Self introduction
         icon: Icon
+      follow:
+        followings: Followings
+        followers: Followers
       book:
         title: title
         memo: memo
