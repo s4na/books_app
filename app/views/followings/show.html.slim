@@ -1,0 +1,8 @@
+/ = render template: "users/index", locals: { users: @users }
+p#notice
+  = notice
+h2
+  = t "views.title", model: Follow.human_attribute_name(:followings)
+= render "users/show_users_table"
+br
+= paginate @users
