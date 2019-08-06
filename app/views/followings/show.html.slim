@@ -5,3 +5,5 @@ h2
 = render "users/show_users_table"
 br
 = paginate @users
+p
+  = link_to t(:back_to_value, {value: t(:index)}), users_path
