@@ -25,7 +25,7 @@ class BooksTest < ApplicationSystemTestCase
     fill_in "タイトル", with: @book.title
     fill_in "メモ", with: @book.memo
     fill_in "作者", with: @book.author
-    attach_file "写真", "tmp/images/book.png"
+    attach_file "写真", "test/storage/images/book.png"
     click_on "登録する"
 
     assert_text "書籍の作成に成功しました"
@@ -39,7 +39,7 @@ class BooksTest < ApplicationSystemTestCase
     fill_in "タイトル", with: "変更後タイトル"
     fill_in "メモ", with: "変更後メモ"
     fill_in "作者", with: "変更後作者"
-    attach_file "写真", "tmp/images/book_open_yoko.png"
+    attach_file "写真", "test/storage/images/book_open_yoko.png"
     click_on "更新する"
 
     assert_text "書籍の更新に成功しました"

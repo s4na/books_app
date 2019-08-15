@@ -30,7 +30,7 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "名前", with: "変更後名前"
     fill_in "メールアドレス", with: "change_test@test.com"
-    attach_file "アイコン", "tmp/images/animal_araiguma_side.png"
+    attach_file "アイコン", "test/storage/images/animal_araiguma_side.png"
     fill_in "郵便番号", with: "111-1111"
     fill_in "住所", with: "千代田区1-1-1"
     fill_in "自己紹介", with: "変更後自己紹介"
@@ -49,7 +49,7 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "名前", with: "変更後名前"
     fill_in "メールアドレス", with: "change_test@test.com"
-    attach_file "アイコン", "tmp/images/animal_sable_antelope.png"
+    attach_file "アイコン", "test/storage/images/animal_sable_antelope.png"
     fill_in "郵便番号", with: "111-1111"
     fill_in "住所", with: "千代田区1-1-1"
     fill_in "自己紹介", with: "変更後自己紹介"
