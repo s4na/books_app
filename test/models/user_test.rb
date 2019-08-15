@@ -3,10 +3,6 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  test "the truth" do
-    assert true
-  end
-
   test "find_for_github_oauth" do
     auth = OmniAuth::AuthHash.new
     auth.define_singleton_method(:provider) do
