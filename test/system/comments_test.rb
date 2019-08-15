@@ -3,47 +3,74 @@
 require "application_system_test_case"
 
 class CommentsTest < ApplicationSystemTestCase
+  include Warden::Test::Helpers
+
   setup do
-    @comment = comments(:one)
+    Warden.test_mode!
+    @user = users(:test_user_1)
+    login_as(@user, scope: :user)
+
+    @book = books(:one)
   end
 
-  test "visiting the index" do
-    visit comments_url
-    assert_selector "h1", text: "Comments"
+  test "index course" do
+    visit books_url
+    click_on "閲覧", match: :first
+    assert_selector "h3", text: "コメント:"
   end
 
-  test "creating a Comment" do
-    visit comments_url
-    click_on "New Comment"
+  test "create course" do
+    visit books_url
+    click_on "書籍を追加する"
 
-    fill_in "Commentable", with: @comment.commentable
-    fill_in "Memo", with: @comment.memo
-    fill_in "Name", with: @comment.name
-    click_on "Create Comment"
+    fill_in "タイトル", with: @book.title
+    fill_in "メモ", with: @book.memo
+    fill_in "作者", with: @book.author
 
-    assert_text "Comment was successfully created"
-    click_on "Back"
+    click_on "登録する"
+
+    fill_in "comment_name", with: "コメント太郎"
+    fill_in "comment_memo", with: "お腹が減りました"
+
+    click_on "登録する"
+
+    assert_text "コメントの作成に成功しました"
   end
 
-  test "updating a Comment" do
-    visit comments_url
-    click_on "Edit", match: :first
+  test "update course" do
+    visit books_url
+    click_on "書籍を追加する"
 
-    fill_in "Commentable", with: @comment.commentable
-    fill_in "Memo", with: @comment.memo
-    fill_in "Name", with: @comment.name
-    click_on "Update Comment"
+    fill_in "タイトル", with: @book.title
+    fill_in "メモ", with: @book.memo
+    fill_in "作者", with: @book.author
+    click_on "登録する"
 
-    assert_text "Comment was successfully updated"
-    click_on "Back"
+    fill_in "comment_name", with: "コメント太郎"
+    fill_in "comment_memo", with: "お腹が減りました"
+    click_on "登録する"
+
+    click_on "編集", match: :first
+    fill_in "名前", with: "更新後名前"
+    fill_in "コメント", with: "更新後コメント"
+    click_on "更新する"
+
+    assert_text "コメントの更新に成功しました"
   end
 
-  test "destroying a Comment" do
-    visit comments_url
+  test "delete course" do
+    visit books_url
+    click_on "閲覧", match: :first
+
+    fill_in "comment_name", with: "コメント太郎"
+    fill_in "comment_memo", with: "お腹が減りました"
+
+    click_on "登録する"
+
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "削除", match: :first
     end
 
-    assert_text "Comment was successfully destroyed"
+    assert_text "コメントの削除に成功しました"
   end
 end
