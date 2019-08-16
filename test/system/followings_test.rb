@@ -13,7 +13,7 @@ class FollowingsTest < ApplicationSystemTestCase
     @book = books(:one)
   end
 
-  test "index course" do
+  test "show followings index" do
     visit "/followings/1"
     assert_selector "h1", text: "フォロー一覧"
   end

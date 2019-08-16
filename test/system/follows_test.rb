@@ -13,14 +13,14 @@ class FollowsTest < ApplicationSystemTestCase
     @book = books(:one)
   end
 
-  test "create course" do
+  test "create follow" do
     visit users_url
     click_on "フォロー", match: :first
 
     assert_text "フォローの作成に成功しました"
   end
 
-  test "delete course" do
+  test "delete follow" do
     visit users_url
     click_on "フォロー", match: :first
 

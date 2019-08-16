@@ -13,17 +13,17 @@ class UsersTest < ApplicationSystemTestCase
     @book = books(:one)
   end
 
-  test "index course" do
+  test "show users index" do
     visit users_url
     assert_selector "h1", text: "ユーザー"
   end
 
-  test "show course" do
+  test "show user" do
     visit "/users/1"
     assert_selector "h1", text: "プロフィール"
   end
 
-  test "create course" do
+  test "create user" do
     visit root_path
     click_on "ログアウト"
     click_on "サインアップ"
@@ -43,7 +43,7 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "アカウント登録が完了しました。"
   end
 
-  test "update course" do
+  test "update user" do
     visit "/users/1"
     click_on "編集", match: :first
 
@@ -58,7 +58,7 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "アカウント情報を変更しました"
   end
 
-  test "delete course" do
+  test "delete user" do
     visit "/users/3"
     click_on "編集", match: :first
     page.accept_confirm do

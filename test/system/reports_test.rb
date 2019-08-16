@@ -15,12 +15,12 @@ class ReportsTest < ApplicationSystemTestCase
     @report = reports(:one)
   end
 
-  test "index course" do
+  test "show reports index" do
     visit reports_url
     assert_selector "h1", text: "日報"
   end
 
-  test "create course" do
+  test "create report" do
     visit reports_url
     click_on "新しい日報"
 
@@ -37,7 +37,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on "戻る"
   end
 
-  test "update course" do
+  test "update report" do
     visit reports_url
     click_on "編集", match: :first
 
@@ -51,7 +51,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on "戻る"
   end
 
-  test "delete course" do
+  test "delete report" do
     visit reports_url
     page.accept_confirm do
       click_on "削除", match: :first

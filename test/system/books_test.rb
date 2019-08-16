@@ -13,12 +13,12 @@ class BooksTest < ApplicationSystemTestCase
     @book = books(:one)
   end
 
-  test "index course" do
+  test "show books index" do
     visit books_url
     assert_selector "h1", text: "書籍"
   end
 
-  test "create course" do
+  test "create book" do
     visit books_url
     click_on "書籍を追加する"
 
@@ -32,7 +32,7 @@ class BooksTest < ApplicationSystemTestCase
     click_on "戻る"
   end
 
-  test "update course" do
+  test "update book" do
     visit books_url
     click_on "編集", match: :first
 
@@ -46,7 +46,7 @@ class BooksTest < ApplicationSystemTestCase
     click_on "戻る"
   end
 
-  test "delete course" do
+  test "delete book" do
     visit books_url
     page.accept_confirm do
       click_on "削除", match: :first
