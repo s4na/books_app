@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class FugaTest < ActionDispatch::IntegrationTest
+class UserTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
 
   def setup
