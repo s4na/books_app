@@ -29,7 +29,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on "登録する"
 
     assert_text "書籍の作成に成功しました"
-    click_on "戻る"
   end
 
   test "update book" do
@@ -43,7 +42,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on "更新する"
 
     assert_text "書籍の更新に成功しました"
-    click_on "戻る"
   end
 
   test "delete book" do
