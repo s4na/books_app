@@ -13,13 +13,13 @@ class CommentsTest < ApplicationSystemTestCase
     @book = books(:one)
   end
 
-  test "index course" do
+  test "show comments index" do
     visit books_url
     click_on "閲覧", match: :first
     assert_selector "h3", text: "コメント:"
   end
 
-  test "create course" do
+  test "create comment" do
     visit books_url
     click_on "書籍を追加する"
 
@@ -37,7 +37,7 @@ class CommentsTest < ApplicationSystemTestCase
     assert_text "コメントの作成に成功しました"
   end
 
-  test "update course" do
+  test "update comment" do
     visit books_url
     click_on "書籍を追加する"
 
@@ -58,7 +58,7 @@ class CommentsTest < ApplicationSystemTestCase
     assert_text "コメントの更新に成功しました"
   end
 
-  test "delete course" do
+  test "delete comment" do
     visit books_url
     click_on "閲覧", match: :first
 
