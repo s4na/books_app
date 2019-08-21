@@ -7,7 +7,7 @@ class ReportsTest < ApplicationSystemTestCase
   include Warden::Test::Helpers
   include Features::DateTimeSelectHelpers
 
-  def setup
+  setup do
     Warden.test_mode!
     @user = users(:test_user_1)
     login_as(@user, scope: :user)

@@ -5,7 +5,7 @@ require "test_helper"
 class UserTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
 
-  def setup
+  setup do
     Warden.test_mode!
     @user = users(:test_user_1)
     @other = users(:test_user_2)

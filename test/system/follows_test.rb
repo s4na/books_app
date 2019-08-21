@@ -5,7 +5,7 @@ require "application_system_test_case"
 class FollowsTest < ApplicationSystemTestCase
   include Warden::Test::Helpers
 
-  def setup
+  setup do
     Warden.test_mode!
     @user = users(:test_user_1)
     login_as(@user, scope: :user)
