@@ -1,0 +1,20 @@
+test_user_1:
+  name: test_user_1
+  id: 1
+  uid: 1
+  provider: github
+  email: "test_user_1@example.com"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+test_user_2:
+  name: test_user_2
+  id: 2
+  uid: 2
+  provider: ""
+  email: "test_user_2@example.com"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+test_user_3:
+  name: test_user_3
+  id: 3
+  uid: 3

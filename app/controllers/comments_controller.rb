@@ -26,8 +26,16 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = @commentable.comments.build(comment_params)
-    @comment.save
-    redirect_to @commentable
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @commentable, notice: I18n.t(:Model_was_successfully_created, model: Comment.model_name.human) }
+        format.json { render :show, status: :created, location: @commentable }
+      else
+        format.html { render :new }
+        format.json { render json: @commentable.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /comments/1
@@ -35,7 +43,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to [@commentable, @comment] }
+        format.html { redirect_to [@commentable, @comment], notice: I18n.t(:Model_was_successfully_updated, model: Comment.model_name.human) }
         format.json { render :show, status: :ok, location: [@commentable, @comment] }
       else
         format.html { render :edit }
@@ -49,8 +57,8 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
+      format.html { redirect_to @commentable, notice: I18n.t(:Model_was_successfully_destroyed, model: Comment.model_name.human) }
       format.json { head :no_content }
-      format.html { redirect_to @commentable }
     end
   end
 

@@ -3,45 +3,53 @@
 require "application_system_test_case"
 
 class BooksTest < ApplicationSystemTestCase
+  include Warden::Test::Helpers
+
   setup do
+    Warden.test_mode!
+    @user = users(:test_user_1)
+    login_as(@user, scope: :user)
+
     @book = books(:one)
   end
 
-  test "visiting the index" do
+  test "show books index" do
     visit books_url
-    assert_selector "h1", text: "Books"
+    assert_selector "h1", text: "書籍"
   end
 
-  test "creating a Book" do
+  test "create book" do
     visit books_url
-    click_on "New Book"
+    click_on "書籍を追加する"
 
-    fill_in "Memo", with: @book.memo
-    fill_in "Title", with: @book.title
-    click_on "Create Book"
+    fill_in "タイトル", with: @book.title
+    fill_in "メモ", with: @book.memo
+    fill_in "作者", with: @book.author
+    attach_file "写真", "test/storage/images/book.png"
+    click_on "登録する"
 
-    assert_text "Book was successfully created"
-    click_on "Back"
+    assert_text "書籍の作成に成功しました"
   end
 
-  test "updating a Book" do
+  test "update book" do
     visit books_url
-    click_on "Edit", match: :first
+    click_on "編集", match: :first
 
-    fill_in "Memo", with: @book.memo
-    fill_in "Title", with: @book.title
-    click_on "Update Book"
+    fill_in "タイトル", with: "変更後タイトル"
+    fill_in "メモ", with: "変更後メモ"
+    fill_in "作者", with: "変更後作者"
+    attach_file "写真", "test/storage/images/book_open_yoko.png"
+    click_on "更新する"
 
-    assert_text "Book was successfully updated"
-    click_on "Back"
+    assert_text "書籍の更新に成功しました"
   end
 
-  test "destroying a Book" do
+  test "delete book" do
     visit books_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "削除", match: :first
     end
 
-    assert_text "Book was successfully destroyed"
+    assert_text "書籍の削除に成功しました"
   end
 end
