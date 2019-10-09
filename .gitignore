@@ -34,3 +34,6 @@
 /public/uploads
 
 .env
+master.key
+secrets.yml
+credentials.yml.enc
