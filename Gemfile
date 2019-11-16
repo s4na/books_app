@@ -75,12 +75,19 @@ gem "devise-i18n"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
-
 gem "webdrivers"
+gem "ed25519", ">= 1.2", "< 2.0"
+gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 
 group :development do
   gem "rubocop", require: false
   gem "rubocop-rails"
   gem "rubocop-performance"
   gem "slim_lint"
+
+  gem "capistrano", require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano-rails", require: false
+  gem "capistrano-rbenv", require: false
+  gem "capistrano3-puma", require: false
 end
