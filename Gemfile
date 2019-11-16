@@ -77,3 +77,10 @@ gem "omniauth-github"
 gem "dotenv-rails"
 
 gem "webdrivers"
+
+group :development do
+  gem "rubocop", require: false
+  gem "rubocop-rails"
+  gem "rubocop-performance"
+  gem "slim_lint"
+end
