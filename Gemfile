@@ -3,10 +3,10 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.3"
+ruby "2.6.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 5.2.3"
+gem "rails", "6.0.1"
 gem "awesome_print"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3"
@@ -75,3 +75,5 @@ gem "devise-i18n"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
+
+gem "webdrivers"
