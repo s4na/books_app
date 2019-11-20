@@ -6,7 +6,7 @@ jobs:
     container:
       image: ruby:2.6.5
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Set up node and yarn
       run: |
         curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
